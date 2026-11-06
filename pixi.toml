@@ -1,0 +1,15 @@
+[workspace]
+authors = ["ElliottPWright <elliottpwright@gmail.com>"]
+channels = ["conda-forge"]
+name = "pixi-playground"
+platforms = ["linux-64"]
+version = "0.1.0"
+
+[tasks]
+hello = "python hello.py"
+greet = { cmd = "echo Hello, {{ name }}", args = ["name"] }
+all = { cmd = "echo done", depends-on = ["hello"] }
+
+[dependencies]
+python = ">=3.14.10,<3.15"
+root_base = ">=6.36"
